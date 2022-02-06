@@ -1,10 +1,67 @@
 body {
-    background-color: #eee;
+    background-color: aliceblue;
 }
 
-h1 {
-    text-align: center;
-    font-size: 74px;
+.menu {
+    margin: 0 auto;
+    width: 1400px;
+    background-color: rgba(148, 148, 148, 0.4);
+    height: 40px;
+    border: solid 1px;
+    border-radius: 4px 4px 0px 0px;
+    border-color: rgba(204, 204, 204, 1);
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-btn {
+    margin: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    width:24px;
+    height:24px;
+    color: #444;
+}
+
+.menu-btn:hover {
+    background-color: rgba(148, 148, 148, 0.2);
+    color: #eee;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background-color: red; 
+}
+
+.window {
+    margin: 0 auto;
+    background-color: rgba(12, 12, 12, 0.8);
+    width: 1400px;
+    height: 750px;
+    border-radius: 0px 0px 4px 4px;
+    border: solid 1px;
+    border-color: rgba(12, 12, 12, 1);
+    margin-top: 0px;
+}
+
+.console-txt {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 22px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.white-txt {
+    color: white;
+}
+
+.green-txt {
     color: chartreuse;
-    text-shadow: 4px 4px 1px black;
+}
+
+.blue-txt {
+    color: skyblue;
 }
