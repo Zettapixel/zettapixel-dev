@@ -22,8 +22,29 @@ const cursorBlink = () => {
     }, 400)
 }
 
+const dropdown = () => {
+    const dropdown = document.getElementById('dropdown')
+    const content = document.getElementById('dropdown-content')
+    dropdown.addEventListener('click', () => {
+        content.classList.toggle('open')
+    })
+}
+
+const removeDropdown = () => {
+    const dropdown = document.getElementById('dropdown')
+    const content = document.getElementById('dropdown-content')
+    document.addEventListener('click', function(event) {
+        const clickDropdown = dropdown.contains(event.target)
+        if (!clickDropdown) {
+            content.classList.remove('open')
+        }
+    })
+}
+
 window.onload = () => {
     document.getElementById('writing').innerHTML = ""
     typeWriter()
     cursorBlink()
+    dropdown()
+    removeDropdown()
 }

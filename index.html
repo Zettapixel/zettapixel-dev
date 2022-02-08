@@ -6,29 +6,47 @@
     <title>Zettapixel</title>
     <link rel="stylesheet" href="main.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="menu">
-        <svg class="menu-btn" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M20,14H4V10H20" />
-        </svg>
-        <svg class="menu-btn" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />
-        </svg>
-        <svg class="menu-btn close-btn" viewBox="0 0 24 24">
-            <path fill="currentColor"
-                d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
-        </svg>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li id="dropdown">
+                <a href="#">Projects</a>
+                <ul id="dropdown-content">
+                    <li><a href="#">Project 1</a></li>
+                    <li><a href="#">Project 2</a></li>
+                    <li><a href="#">Project 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About me</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="interface-btns">
+            <svg class="menu-btn" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20,14H4V10H20" />
+            </svg>
+            <svg class="menu-btn" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />
+            </svg>
+            <svg class="menu-btn close-btn" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+            </svg>
+        </div>
     </div>
     <div class="window">
         <div class="console-txt">
-            <span class="green-txt">guest@zettapixel.dev</span><span class="white-txt">:</span><span class="blue-txt">~</span><span class="white-txt">$</span>
-            <span id="writing" class="white-txt">Welcome to my portfolio.</span><span class="white-txt" id="cursor">|</span>
+            <span class="green-txt">guest@zettapixel.dev</span><span class="white-txt">:</span><span
+                class="blue-txt">~</span><span class="white-txt">$</span>
+            <span id="writing" class="white-txt">Welcome to my portfolio.</span><span class="white-txt"
+                id="cursor">|</span>
         </div>
     </div>
 </body>
 <script src="main.js"></script>
+
 </html>

@@ -2,19 +2,88 @@ body {
     background-color: aliceblue;
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 10px;
+}
+
+li {
+    float: left;
+    padding: 0;
+    position: relative;
+}
+
+li a {
+    cursor: context-menu;
+    color: black;
+    padding: 9px 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar > li:hover > a {
+    color: #fff;
+    background-color: rgba(148, 148, 148, 0.2);
+    transition: 0.3s;
+}
+
+ul li ul {
+    visibility: hidden;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    width: 250px;
+    position: absolute;
+    background-color: #444;
+    border: solid 1px rgba(68, 67, 67, 0.4);
+    border-radius: 0px 0px 4px 4px;
+}
+
+/*
+ul li:hover > ul {
+    visibility: visible;
+}
+*/
+
+.open {
+    visibility: visible;
+}
+
+ul li ul li {
+    padding: 4px 140px 4px 0px;
+}
+
+ul li ul li:hover {
+    background-color: rgb(47, 47, 255, 0.2);
+}
+
+ul li ul li > a {
+    color: #eee;
+}
+
+ul li ul li:hover > a {
+    color: white;
+}
+
+.interface-btns {
+    height: 40px;
+}
+
 .menu {
     margin: 0 auto;
     width: 1400px;
     background-color: rgba(148, 148, 148, 0.4);
-    height: 40px;
+    height: auto;
     border: solid 1px;
     border-radius: 4px 4px 0px 0px;
     border-color: rgba(204, 204, 204, 1);
     margin-top: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .menu-btn {
