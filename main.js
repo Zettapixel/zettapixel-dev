@@ -1,13 +1,35 @@
-var i = 0
-var consoleText = document.getElementById('writing').innerHTML
+const typing = document.getElementById('writing').innerHTML
+const typingContact = document.getElementById('contact-text').innerHTML
+const consoleText = document.getElementById('console-txt').innerHTML
 var cursor = true
 
-function typeWriter() {
-    if (i < consoleText.length) {
-        document.getElementById('writing').innerHTML += consoleText.charAt(i)
-        i++
-        setTimeout(typeWriter, 35)
+const typeWriter = (message, container) => {
+    const timer = ms => new Promise(res => setTimeout(res, ms))
+    async function load () {
+        await timer(200)
+        for (var i = 0; i < message.length; i++) {
+            document.getElementById(container).innerHTML += message.charAt(i)
+            await timer(35)
+        }
     }
+    load()
+}
+
+const typeWriterShow = (message, container, show) => {
+    const timer = ms => new Promise(res => setTimeout(res, ms))
+    async function load () {
+        await timer(200)
+        for (var i = 0; i < message.length; i++) {
+            document.getElementById(container).innerHTML += message.charAt(i)
+            await timer(35)
+            if(i == message.length - 1){
+                await timer(200)
+                document.getElementById(show).style.display = 'inline'
+                document.getElementById(show).classList.add('zoom-in')
+            }
+        }
+    }
+    load()
 }
 
 const cursorBlink = () => {
@@ -30,6 +52,26 @@ const dropdown = () => {
     })
 }
 
+const contact = () => {
+    const contact = document.getElementById('contact')
+    contact.addEventListener('click', () => {
+        const contactContent = document.getElementById('contact-content')
+        contactContent.classList.add('display-show')
+        document.getElementById('console-txt').innerHTML = consoleText + contactContent.innerHTML
+        document.getElementById('console-txt').appendChild(document.getElementById('cursor'))
+        document.getElementById('contact-text').innerHTML = ""
+        typeWriterShow(typingContact, 'contact-text', 'contact-form')
+    })
+}
+
+const home = () => {
+    const home = document.getElementById('home')
+    home.addEventListener('click', () => {
+        console.log('Testing home tab')
+        window.location.reload()
+    })
+}
+
 const removeDropdown = () => {
     const dropdown = document.getElementById('dropdown')
     const content = document.getElementById('dropdown-content')
@@ -43,8 +85,10 @@ const removeDropdown = () => {
 
 window.onload = () => {
     document.getElementById('writing').innerHTML = ""
-    typeWriter()
+    typeWriter(typing, 'writing')
     cursorBlink()
     dropdown()
     removeDropdown()
+    contact()
+    home()
 }
